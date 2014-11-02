@@ -48,6 +48,8 @@ function showQuestion() {
     freqs[id] = freqs[id] + 1;
     localStorage.setItem("correct", JSON.stringify(correct));
     localStorage.setItem("freq", JSON.stringify(freqs));
+
+    $('#readiness').text((Math.floor(10*100.0*(99-total)/99)/10)+"%");
 }
 
 function reset() {
@@ -95,7 +97,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-
+<h3>Readiness <span id="readiness"></span></h3>
 <h2><small id="1"></small> What is the supreme law of the land?</h2><ul class="xlist-unstyled"><li>the Constitution</li></ul>
 <h2><small id="2"></small> What does the Constitution do?</h2><ul class="xlist-unstyled"><li>sets up the government</li><li>defines the government</li><li>protects basic rights of Americans</li></ul>
 <h2><small id="3"></small> The idea of self-government is in the first three words of the Constitution. What are these words?</h2><ul class="xlist-unstyled"><li>We the People</li></ul>
